@@ -32,10 +32,20 @@ nombresImagenes();
 function mapRange(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
+
+
+
 //asignacionPosMouse
-window.addEventListener('mousemove',(e)=>{
-    mouseCursorX=e.pageX;
-    mouseCursorY=e.pageY;
+window.addEventListener('touchmove',(e)=>{
+    // mouseCursorX=e.pageX;
+    // mouseCursorY=e.pageY;
+    
+    
+    var touchLocation=e.targetTouches[0];
+    
+    mouseCursorX=touchLocation.pageX;
+    mouseCursorY=touchLocation.pageY;
+   
   //posCentro
      
     const centroX=window.innerWidth/2;
@@ -43,7 +53,7 @@ window.addEventListener('mousemove',(e)=>{
     //calcular el angulo
 
     function valorArcotangente(centerx1,centery1,x2,y2){
-        console.log(y2 + "+" + centery1 + "," + x2 +"+" +centerx1);
+      
         let valorArcotangente=Math.atan2(-y2+centery1,-x2+centerx1);
         let conversionGrados=valorArcotangente/(Math.PI/180);
         return conversionGrados;
@@ -60,9 +70,5 @@ window.addEventListener('mousemove',(e)=>{
     let colorNormalizado=Math.round(mapRange(valorRecibido,-180,180,0,360));
     fondo.style.background = `hsl(${colorNormalizado},60%,50%)`;
     
-});
-
-
-
-
+},false);
 
