@@ -4,22 +4,41 @@
     box-sizing: border-box;
 }
 
+html{
+    cursor: none;
+}
 body{
     background: hsl(0,50%,50%);
 }
 
 .container{
-   
     margin: 0 auto;
     min-width:2vh;
     height: 100vh;
     display: grid;
 }
 .murakami{
-    /* background: red; */
+    
     margin: auto;
-    
-    /* width: 100%; */
-    
+       
 
 }
+.cursor{
+    width:10rem;
+    height:10rem;
+    border-radius: 50%;
+    position: absolute;
+    border: solid black 1px;
+    transform: translate(-50% ,-50%);
+    pointer-events:none;
+    transition: all 0.3s ease;
+    transition-property: transform;
+    transform-origin: 100% 100%;
+    backdrop-filter: url(filters.svg#filter) saturate(0%) contrast(100%);
+}
+
+.rueda-especial{
+    transform:  scale(2);
+    
+}
+
