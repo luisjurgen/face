@@ -63,7 +63,6 @@ window.addEventListener('touchmove',(e)=>{
     let valorRecibido= valorArcotangente(centroX,centroY,mouseCursorX,mouseCursorY);
 
     let valorNormalizado=Math.round(mapRange(valorRecibido,-180,180, 0, numFrames-1));
-    console.log(valorNormalizado);
     //intervencion En el Dom
     murakami.setAttribute("href",`#s${secuencia[valorNormalizado]}`);
     //colorInterpolacion
